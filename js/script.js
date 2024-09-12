@@ -25,3 +25,8 @@ guessLetterButton.addEventListener("click", function (e) {
 });
 
 inUseLetters(word);
+
+const playersInput = function (input) {
+   const acceptedLetter = /[a-zA-Z]/;
+   if ()
+}
