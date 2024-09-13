@@ -28,5 +28,9 @@ inUseLetters(word);
 
 const playersInput = function (input) {
    const acceptedLetter = /[a-zA-Z]/;
-   if ()
+   if (input == 0) {
+      console.log ("");
+   } else if (acceptedLetter !==) {
+      
+   }
 }
