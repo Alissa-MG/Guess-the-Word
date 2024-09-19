@@ -23,7 +23,7 @@ guessLetterButton.addEventListener("click", function (e) {
    message.innerText = "";
    const guess = letterInput.value;
    //console.log(guess);
-   const = goodGuess = validateInput(guess);
+   const goodGuess = validateInput(guess);
    if (goodGuess) {
       makeGuess(guess);
    letterInput.value = "";
