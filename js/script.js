@@ -27,7 +27,7 @@ guessLetterButton.addEventListener("click", function (e) {
    if (goodGuess) {
       makeGuess(guess);
    letterInput.value = "";
-
+   }
 });
 
 inUseLetters(word);
