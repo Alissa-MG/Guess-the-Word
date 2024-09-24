@@ -10,11 +10,11 @@ const playAgainButton = document.querySelector(".play-again");
 const word = "magnolia";
 const guessedLetters = [];
 
-const inUse = function (word) {
-   const inUseLetters =  [];
+const placeholder = function (word) {
+   const placeholderLetters =  [];
    for (const letter of word) {
     console.log(letter);
-    inUseLetters.push("●");
+    placeholderLetters.push("●");
    }
    wordInProgress.innerText = inUseLetters.join("");
 }
@@ -23,14 +23,15 @@ guessLetterButton.addEventListener("click", function (e) {
    message.innerText = "";
    const guess = letterInput.value;
    //console.log(guess);
-   const goodGuess = validateInput(guess);
+   const goodGuess = playersInput(guess);
+   
    if (goodGuess) {
       makeGuess(guess);
-   letterInput.value = "";
    }
+   letterInput.value = "";
 });
 
-inUseLetters(word);
+placeholder(word);
 
 const playersInput = function (input) {
    const acceptedLetter = /[a-zA-Z]/;
