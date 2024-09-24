@@ -60,3 +60,9 @@ const makeGuess = function (guess) {
    }
 
 };
+
+const playersGuesses = function () {
+   guessedLettersElement.HTML= "";
+   guessedLetters = document.createElement("li");
+   guessedLetters();
+};
