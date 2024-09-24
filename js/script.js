@@ -61,7 +61,7 @@ const makeGuess = function (guess) {
 
 };
 
-const playersGuesses = function () {
+const playersGuessedLetters = function () {
    guessedLettersElement.innerHTML= "";
    for (const letter of guessedLetters) {
          const li = document.createElement("li");
