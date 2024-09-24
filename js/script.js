@@ -62,7 +62,10 @@ const makeGuess = function (guess) {
 };
 
 const playersGuesses = function () {
-   guessedLettersElement.HTML= "";
-   guessedLetters = document.createElement("li");
-   guessedLetters();
+   guessedLettersElement.innerHTML= "";
+   for (const letter of guessedLetters) {
+         const li = document.createElement("li");
+         li.innerText = letter;
+         guessedLettersElement.append(li);
+   }
 };
