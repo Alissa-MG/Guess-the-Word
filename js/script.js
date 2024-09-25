@@ -70,10 +70,17 @@ const showGuessedLetters = function () {
    }
 };
 
-const wordInProgress = function (guessedLetters) {
-
-};
-
-const wordUpper = wordUpper.toUpperCase();
-const wordArray = wordUpper.split("");
-   console.log(wordArray);
+const updatewordInProgress = function (guessedLetters) {
+   const wordUpper = wordUpper.toUpperCase();
+   const wordArray = wordUpper.split("");
+   const revealWord = [];
+   for (const letter of wordArray { 
+      if (guessedLetters.includes(letter)) {
+         revealWord.push(letter.toUpperCase());
+   } else {
+      revealWord.push("●");
+      }
+   }
+   wordInProgress.innerText = revealWord.join("");
+   checkIfWin();
+)};
