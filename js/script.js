@@ -69,3 +69,11 @@ const showGuessedLetters = function () {
          guessedLettersElement.append(li);
    }
 };
+
+const wordInProgress = function (guessedLetters) {
+
+};
+
+const wordUpper = wordUpper.toUpperCase();
+const wordArray = wordUpper.split("");
+   console.log(wordArray);
