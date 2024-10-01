@@ -74,7 +74,7 @@ const updatewordInProgress = function (guessedLetters) {
    const wordUpper = wordUpper.toUpperCase();
    const wordArray = wordUpper.split("");
    const revealWord = [];
-   for (const letter of wordArray { 
+   for (const letter of wordArray) { 
       if (guessedLetters.includes(letter)) {
          revealWord.push(letter.toUpperCase());
    } else {
@@ -83,7 +83,7 @@ const updatewordInProgress = function (guessedLetters) {
    }
    wordInProgress.innerText = revealWord.join("");
    checkIfWin();
-)};
+};
 
 const checkIfWin = function () {
    if (word.toUpperCase() === wordInProgress.innerText) {
