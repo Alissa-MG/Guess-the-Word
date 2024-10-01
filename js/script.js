@@ -17,7 +17,10 @@ const placeholder = function (word) {
     placeholderLetters.push("●");
    }
    wordInProgress.innerText = placeholderLetters.join("");
-}
+};
+
+   placeholder(word);
+
 guessLetterButton.addEventListener("click", function (e) {
    e.preventDefault();
    message.innerText = "";
@@ -31,7 +34,7 @@ guessLetterButton.addEventListener("click", function (e) {
    letterInput.value = "";
 });
 
-placeholder(word);
+
 
 const playersInput = function (input) {
    const acceptedLetter = /[a-zA-Z]/;
@@ -57,8 +60,9 @@ const makeGuess = function (guess) {
    } else {
       guessedLetters.push(guess);
       console.log(guessedLetters);
+      showGuessedLetters();
+      updatewordInProgress(guessedLetters);
    }
-
 };
 
 const showGuessedLetters = function () {
@@ -71,7 +75,7 @@ const showGuessedLetters = function () {
 };
 
 const updatewordInProgress = function (guessedLetters) {
-   const wordUpper = wordUpper.toUpperCase();
+   const wordUpper = word.toUpperCase();
    const wordArray = wordUpper.split("");
    const revealWord = [];
    for (const letter of wordArray) { 
