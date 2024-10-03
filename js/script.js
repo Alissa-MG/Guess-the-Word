@@ -61,7 +61,8 @@ const makeGuess = function (guess) {
       guessedLetters.push(guess);
       console.log(guessedLetters);
       showGuessedLetters();
-      updatewordInProgress(guessedLetters);
+      updateGuessesRemaining(guess);
+      updateWordInProgress(guessedLetters);
    }
 };
 
@@ -74,7 +75,7 @@ const showGuessedLetters = function () {
    }
 };
 
-const updatewordInProgress = function (guessedLetters) {
+const updateWordInProgress = function (guessedLetters) {
    const wordUpper = word.toUpperCase();
    const wordArray = wordUpper.split("");
    const revealWord = [];
@@ -87,6 +88,25 @@ const updatewordInProgress = function (guessedLetters) {
    }
    wordInProgress.innerText = revealWord.join("");
    checkIfWin();
+};
+
+
+const updateGuessesRemaining = function (guess) {
+   const upperWord = word.toUpperCase();
+   if (!upperWord.includes(guess)) {
+      message.innerText = `Sorry, the word has no ${guess}.`;
+      remainingGuesses -= 1;
+   } else {
+      message.innerText = `Good job, the word has a ${guess}!`;
+   }   
+
+   if (remainingGuesses === 0) {
+      message.innerHTML = `Game over! The word was <span class="highlight">${word}</span>.`;
+   } else if  (remainingGuesses === 1) {
+      remainingGuessesSpan.innerText = `${remainingGuesses} guess`;
+   } else { 
+      remainingGuessesSpan.innerText = `${remainingGuesses} guesses`;   
+   }
 };
 
 const checkIfWin = function () {
