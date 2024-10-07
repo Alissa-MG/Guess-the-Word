@@ -7,6 +7,7 @@ const remainingGuessesSpan = document.querySelector(".remaining span");
 const message = document.querySelector(".message");
 const playAgainButton = document.querySelector(".play-again");
 
+const remainingGuesses === 8;
 const word = "magnolia";
 const guessedLetters = [];
 
@@ -98,9 +99,7 @@ const updateGuessesRemaining = function (guess) {
       remainingGuesses -= 1;
    } else {
       message.innerText = `Good job, the word has a ${guess}!`;
-   }   
-
-   if (remainingGuesses === 0) {
+   }  if (remainingGuesses === 0) {
       message.innerHTML = `Game over! The word was <span class="highlight">${word}</span>.`;
    } else if  (remainingGuesses === 1) {
       remainingGuessesSpan.innerText = `${remainingGuesses} guess`;
