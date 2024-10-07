@@ -11,6 +11,16 @@ let remainingGuesses = 8;
 let word = "magnolia";
 const guessedLetters = [];
 
+const getWord = async function () {
+   const response = await fetch("https://gist.githubusercontent.com/skillcrush-curriculum/7061f1d4d3d5bfe47efbfbcfe42bf57e/raw/5ffc447694486e7dea686f34a6c085ae371b43fe/words.txt");
+   const word = await response.text();
+   const wordArray = words.split("\n");
+   const randomIndex = Math.floor(Math.random() * wordArray.length);
+   word = wordArray[randomIndex].trim();
+      placeholder(word);
+};
+
+
 const placeholder = function (word) {
    const placeholderLetters =  [];
    for (const letter of word) {
@@ -20,7 +30,7 @@ const placeholder = function (word) {
    wordInProgress.innerText = placeholderLetters.join("");
 };
 
-   placeholder(word);
+   getWord();
 
 guessLetterButton.addEventListener("click", function (e) {
    e.preventDefault();
@@ -114,3 +124,6 @@ const checkIfWin = function () {
       message.innerHTML = `<p class="highlight"> You guessed the correct word! Congrats!</p>`;
    }
 };
+
+
+
