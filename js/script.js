@@ -7,8 +7,8 @@ const remainingGuessesSpan = document.querySelector(".remaining span");
 const message = document.querySelector(".message");
 const playAgainButton = document.querySelector(".play-again");
 
-const remainingGuesses === 8;
-const word = "magnolia";
+let remainingGuesses = 8;
+let word = "magnolia";
 const guessedLetters = [];
 
 const placeholder = function (word) {
